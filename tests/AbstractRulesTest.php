@@ -35,7 +35,7 @@ final class DefaultName extends AbstractRules
 
 final class CustomName extends AbstractRules
 {
-    public $name = 'Personal CS';
+    public string $name = 'Personal CS';
 
     protected function rules(): array
     {
