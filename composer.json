@@ -1,0 +1,46 @@
+{
+    "name": "realodix/cs-config",
+    "description": "Shared php-cs-fixer rules & finders preset",
+    "keywords": ["code style","codestyle","coding standards","coding style","php-cs-fixer ","php-cs-fixer-config"],
+    "license": "MIT",
+    "homepage": "https://github.com/realodix/cs-config",
+    "support": {
+        "issues": "https://github.com/realodix/cs-config/issues",
+        "source": "https://github.com/realodix/cs-config"
+    },
+    "authors": [
+        {
+            "name": "Budi Hermawan",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1|^8.0",
+        "friendsofphp/php-cs-fixer": "^2.16|^3.2",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^1.17|^2.5|^3.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5|^8.5|^9.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Realodix\\CsConfig\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Realodix\\CsConfig\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
