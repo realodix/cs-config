@@ -8,7 +8,7 @@ final class Laravel extends AbstractRules
     {
         // Latest commit 2530a97 on Jan 27 2022
         // https://github.com/Jubeki/laravel-code-style/blob/main/src/Config.php
-        $baseRule = [
+        return [
             '@PSR2'                                       => true,
             'align_multiline_comment'                     => ['comment_type' => 'phpdocs_like'],
             'array_indentation'                           => true,
@@ -29,6 +29,7 @@ final class Laravel extends AbstractRules
             'heredoc_to_nowdoc'                           => true,
             'include'                                     => true,
             'increment_style'                             => ['style' => 'post'],
+            'integer_literal_case'                        => true,
             'lambda_not_used_import'                      => true,
             'list_syntax'                                 => true,
             'lowercase_cast'                              => true,
@@ -92,6 +93,7 @@ final class Laravel extends AbstractRules
             'ternary_operator_spaces'                     => true,
             'trailing_comma_in_multiline'                 => true,
             'trim_array_spaces'                           => true,
+            'types_spaces'                                => true,
             'unary_operator_spaces'                       => true,
             'visibility_required'                         => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array'             => true,
@@ -104,21 +106,5 @@ final class Laravel extends AbstractRules
             'phpdoc_order'      => true,
             'phpdoc_separation' => true,
         ];
-
-        return array_merge($baseRule, $this->compatibilityMode());
-    }
-
-    private function compatibilityMode(): array
-    {
-        $rules = [];
-
-        if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
-            $rules = [
-                'integer_literal_case' => true,
-                'types_spaces'         => true,
-            ];
-        }
-
-        return $rules;
     }
 }
