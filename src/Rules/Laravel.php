@@ -53,7 +53,6 @@ final class Laravel extends AbstractRules
             'include'                      => true,
             'increment_style'              => ['style' => 'post'],
             'indentation_type'             => true,
-            'integer_literal_case'         => true,
             'lambda_not_used_import'       => true,
             'linebreak_after_opening_tag'  => true,
             'line_ending'                  => true,
@@ -165,5 +164,18 @@ final class Laravel extends AbstractRules
             'Laravel/laravel_phpdoc_order'      => true,
             'Laravel/laravel_phpdoc_separation' => true,
         ];
+    }
+
+    private function compatibilityMode(): array
+    {
+        $rules = [];
+
+        if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
+            $rules = [
+                'integer_literal_case' => true,
+            ];
+        }
+
+        return $rules;
     }
 }
