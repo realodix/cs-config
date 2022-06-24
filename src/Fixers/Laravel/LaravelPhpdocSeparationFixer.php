@@ -36,10 +36,7 @@ final class LaravelPhpdocSeparationFixer extends AbstractFixer
 
     public function getDefinition(): FixerDefinitionInterface
     {
-        return new FixerDefinition(
-            'Annotations should be grouped together.',
-            []
-        );
+        return new FixerDefinition('Annotations should be grouped together.', []);
     }
 
     public function getPriority(): int

@@ -15,14 +15,6 @@
     <InternalClass occurrences="1">
       <code>AbstractFixer</code>
     </InternalClass>
-    <MissingParamType occurrences="2">
-      <code>$content</code>
-      <code>$content</code>
-    </MissingParamType>
-    <MissingReturnType occurrences="2">
-      <code>moveParamAnnotations</code>
-      <code>moveThrowsAnnotations</code>
-    </MissingReturnType>
     <PossiblyNullReference occurrences="4">
       <code>getContent</code>
       <code>getContent</code>

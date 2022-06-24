@@ -171,7 +171,7 @@ final class Laravel extends AbstractRules
 
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $rules = [
-                'integer_literal_case' => true,
+                'integer_literal_case'         => true,
                 'no_space_around_double_colon' => true,
             ];
         }
