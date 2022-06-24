@@ -8,9 +8,8 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
-use SplFileInfo;
 
-class LaravelPhpdocOrderFixer extends AbstractFixer
+final class LaravelPhpdocOrderFixer extends AbstractFixer
 {
     public function getName(): string
     {
@@ -25,22 +24,8 @@ class LaravelPhpdocOrderFixer extends AbstractFixer
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
-            'Annotations in PHPDoc should be ordered so that `@param` annotations come first, then `@return` annotations, then `@throws` annotations.',
-            [
-                new CodeSample(
-                    '<?php
-/**
- * Hello there!
- *
- * @throws Exception|RuntimeException foo
- * @custom Test!
- * @return int  Return the number of changes.
- * @param string $foo
- * @param bool   $bar Bar
- */
-'
-                ),
-            ]
+            'Annotations must respect the following order: @param, @return, and @throws.',
+            [],
         );
     }
 
@@ -49,7 +34,7 @@ class LaravelPhpdocOrderFixer extends AbstractFixer
         return -2;
     }
 
-    protected function applyFix(SplFileInfo $file, Tokens $tokens): void
+    protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
     {
         foreach ($tokens as $index => $token) {
             if (! $token->isGivenKind(T_DOC_COMMENT)) {
@@ -64,10 +49,7 @@ class LaravelPhpdocOrderFixer extends AbstractFixer
     }
 
     /**
-     * Moves to the @params annotations on the given content.
-     *
-     * @param  string  $content
-     * @return string
+     * Move all param annotations in before throws and return annotations.
      */
     private function moveParamAnnotations($content)
     {
@@ -96,10 +78,7 @@ class LaravelPhpdocOrderFixer extends AbstractFixer
     }
 
     /**
-     * Moves to the @throws annotations on the given content.
-     *
-     * @param  string  $content
-     * @return string
+     * Move all return annotations after param and throws annotations.
      */
     private function moveThrowsAnnotations($content)
     {

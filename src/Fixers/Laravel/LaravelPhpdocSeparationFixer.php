@@ -5,7 +5,7 @@ namespace Realodix\CsConfig\Fixers\Laravel;
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\DocBlock\Annotation;
 use PhpCsFixer\DocBlock\DocBlock;
-use PhpCsFixer\FixerDefinition\CodeSample;
+use PhpCsFixer\DocBlock\Tag;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
@@ -16,36 +16,15 @@ final class LaravelPhpdocSeparationFixer extends AbstractFixer
     /**
      * Groups of tags that should be allowed to immediately follow each other.
      *
-     * @var array
+     * @var array<int, array<int, string>>
      */
-    private static $groups = [
+    protected $groups = [
         ['deprecated', 'link', 'see', 'since'],
         ['author', 'copyright', 'license'],
         ['category', 'package', 'subpackage'],
         ['property', 'property-read', 'property-write'],
         ['param', 'return'],
     ];
-
-    /**
-     * Should the given tags be kept together, or kept apart?
-     */
-    public static function shouldBeTogether(Tag $first, Tag $second): bool
-    {
-        $firstName = $first->getName();
-        $secondName = $second->getName();
-
-        if ($firstName === $secondName) {
-            return true;
-        }
-
-        foreach (self::$groups as $group) {
-            if (\in_array($firstName, $group, true) && \in_array($secondName, $group, true)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
     /**
      * @inheritdoc
@@ -55,51 +34,24 @@ final class LaravelPhpdocSeparationFixer extends AbstractFixer
         return 'Laravel/laravel_phpdoc_separation';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
-            'Annotations in PHPDoc should be grouped together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single blank line. @param and @return are of the same type',
-            [
-                new CodeSample(
-                    '<?php
-/**
- * Description.
- * @param string $foo
- *
- *
- * @param bool   $bar Bar
- * @throws Exception|RuntimeException
- * @return bool
- */
-function fnc($foo, $bar) {}
-'
-                ),
-            ]
+            'Annotations should be grouped together.',
+            []
         );
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getPriority(): int
     {
         return -3;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isTokenKindFound(T_DOC_COMMENT);
     }
 
-    /**
-     * @inheritdoc
-     */
     protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
     {
         foreach ($tokens as $index => $token) {
@@ -117,8 +69,11 @@ function fnc($foo, $bar) {}
 
     /**
      * Make sure the description is separated from the annotations.
+     *
+     * @param  \PhpCsFixer\DocBlock\DocBlock  $doc
+     * @return void
      */
-    private function fixDescription(DocBlock $doc): void
+    protected function fixDescription(DocBlock $doc): void
     {
         foreach ($doc->getLines() as $index => $line) {
             if ($line->containsATag()) {
@@ -139,8 +94,11 @@ function fnc($foo, $bar) {}
 
     /**
      * Make sure the annotations are correctly separated.
+     *
+     * @param  \PhpCsFixer\DocBlock\DocBlock  $doc
+     * @return void
      */
-    private function fixAnnotations(DocBlock $doc): void
+    protected function fixAnnotations(DocBlock $doc): void
     {
         foreach ($doc->getAnnotations() as $index => $annotation) {
             $next = $doc->getAnnotation($index + 1);
@@ -160,9 +118,14 @@ function fnc($foo, $bar) {}
     }
 
     /**
-     * Force the given annotations to immediately follow each other.
+     * Ensure the given annotations to immediately follow each other.
+     *
+     * @param  \PhpCsFixer\DocBlock\DocBlock  $doc
+     * @param  \PhpCsFixer\DocBlock\Annotation  $annotation
+     * @param  \PhpCsFixer\DocBlock\Annotation  $next
+     * @return void
      */
-    private function ensureAreTogether(DocBlock $doc, Annotation $first, Annotation $second): void
+    protected function ensureAreTogether(DocBlock $doc, Annotation $first, Annotation $second): void
     {
         $pos = $first->getEnd();
         $final = $second->getStart();
@@ -173,9 +136,14 @@ function fnc($foo, $bar) {}
     }
 
     /**
-     * Force the given annotations to have one empty line between each other.
+     * Ensure the given annotations to have one empty line between each other.
+     *
+     * @param  \PhpCsFixer\DocBlock\DocBlock  $doc
+     * @param  \PhpCsFixer\DocBlock\Annotation  $annotation
+     * @param  \PhpCsFixer\DocBlock\Annotation  $next
+     * @return void
      */
-    private function ensureAreSeparate(DocBlock $doc, Annotation $first, Annotation $second): void
+    protected function ensureAreSeparate(DocBlock $doc, Annotation $first, Annotation $second): void
     {
         $pos = $first->getEnd();
         $final = $second->getStart() - 1;
@@ -190,5 +158,30 @@ function fnc($foo, $bar) {}
         for ($pos = $pos + 1; $pos < $final; $pos++) {
             $doc->getLine($pos)->remove();
         }
+    }
+
+    /**
+     * If the given tags should be together or apart.
+     *
+     * @param  \PhpCsFixer\DocBlock\Tag  $first
+     * @param  \PhpCsFixer\DocBlock\Tag  $second
+     * @return bool
+     */
+    protected function shouldBeTogether(Tag $first, Tag $second): bool
+    {
+        $firstName = $first->getName();
+        $secondName = $second->getName();
+
+        if ($firstName === $secondName) {
+            return true;
+        }
+
+        foreach ($this->groups as $group) {
+            if (\in_array($firstName, $group, true) && \in_array($secondName, $group, true)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
