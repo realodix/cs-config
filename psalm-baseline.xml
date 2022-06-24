@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="4.23.0@f1fe6ff483bf325c803df9f510d09a03fd796f88">
-  <file src="src/Config.php">
-    <InternalMethod occurrences="2">
-      <code>new Fixers\Laravel\LaravelPhpdocOrderFixer</code>
-      <code>new Fixers\Laravel\LaravelPhpdocSeparationFixer</code>
-    </InternalMethod>
-  </file>
   <file src="src/Fixers/Laravel/LaravelPhpdocAlignmentFixer.php">
     <InternalClass occurrences="1">
       <code>TypeExpression::REGEX_TYPES</code>
     </InternalClass>
   </file>
   <file src="src/Fixers/Laravel/LaravelPhpdocOrderFixer.php">
-    <InternalClass occurrences="1">
-      <code>AbstractFixer</code>
-    </InternalClass>
     <PossiblyNullReference occurrences="4">
       <code>getContent</code>
       <code>getContent</code>
@@ -23,9 +14,6 @@
     </PossiblyNullReference>
   </file>
   <file src="src/Fixers/Laravel/LaravelPhpdocSeparationFixer.php">
-    <InternalClass occurrences="1">
-      <code>AbstractFixer</code>
-    </InternalClass>
     <InvalidOperand occurrences="2">
       <code>$index</code>
       <code>$index</code>

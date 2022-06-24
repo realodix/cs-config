@@ -2,23 +2,18 @@
 
 namespace Realodix\CsConfig\Fixers\Laravel;
 
-use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\DocBlock\DocBlock;
+use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
-final class LaravelPhpdocOrderFixer extends AbstractFixer
+final class LaravelPhpdocOrderFixer implements FixerInterface
 {
     public function getName(): string
     {
         return 'Laravel/laravel_phpdoc_order';
-    }
-
-    public function isCandidate(Tokens $tokens): bool
-    {
-        return $tokens->isTokenKindFound(T_DOC_COMMENT);
     }
 
     public function getDefinition(): FixerDefinitionInterface
@@ -31,7 +26,17 @@ final class LaravelPhpdocOrderFixer extends AbstractFixer
         return -2;
     }
 
-    protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
+    public function isRisky(): bool
+    {
+        return false;
+    }
+
+    public function isCandidate(Tokens $tokens): bool
+    {
+        return $tokens->isTokenKindFound(T_DOC_COMMENT);
+    }
+
+    public function fix(\SplFileInfo $file, Tokens $tokens): void
     {
         foreach ($tokens as $index => $token) {
             if (! $token->isGivenKind(T_DOC_COMMENT)) {
@@ -106,5 +111,10 @@ final class LaravelPhpdocOrderFixer extends AbstractFixer
         }
 
         return $doc->getContent();
+    }
+
+    public function supports(\SplFileInfo $file): bool
+    {
+        return true;
     }
 }

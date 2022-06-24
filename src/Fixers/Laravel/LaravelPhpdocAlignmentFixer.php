@@ -16,14 +16,24 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
         return 'Laravel/laravel_phpdoc_alignment';
     }
 
-    public function isCandidate(Tokens $tokens): bool
+    public function getDefinition(): FixerDefinitionInterface
     {
-        return $tokens->isAnyTokenKindsFound([T_DOC_COMMENT]);
+        return new FixerDefinition('@param and type definition must be followed by two spaces.', []);
+    }
+
+    public function getPriority(): int
+    {
+        return -42;
     }
 
     public function isRisky(): bool
     {
         return false;
+    }
+
+    public function isCandidate(Tokens $tokens): bool
+    {
+        return $tokens->isAnyTokenKindsFound([T_DOC_COMMENT]);
     }
 
     public function fix(\SplFileInfo $file, Tokens $tokens): void
@@ -47,16 +57,6 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
 
             $tokens[$index] = new Token([T_DOC_COMMENT, $newContent]);
         }
-    }
-
-    public function getDefinition(): FixerDefinitionInterface
-    {
-        return new FixerDefinition('@param and type definition must be followed by two spaces.', []);
-    }
-
-    public function getPriority(): int
-    {
-        return -42;
     }
 
     public function supports(\SplFileInfo $file): bool
