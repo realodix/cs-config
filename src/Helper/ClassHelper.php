@@ -12,8 +12,8 @@ class ClassHelper
     public static function classBasename($class): string
     {
         if (! is_object($class)) {
-            throw new \TypeError(
-                'Argument #1 ($class) must be of type object, '.gettype($class).' given'
+            throw new \InvalidArgumentException(
+                'Argument #1 ($class) must be of type object, '.gettype($class).' given.'
             );
         }
 
