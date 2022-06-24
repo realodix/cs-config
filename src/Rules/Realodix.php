@@ -35,9 +35,10 @@ final class Realodix extends AbstractRules
             'phpdoc_align' => [
                 // align_phpdoc
                 'tags' => [
-                    'param',
+                    // @param is already in Laravel
+                    // 'param',
                     'throws', 'type', 'var',
-                    // 'return',
+                    'return',
                 ],
             ],
 

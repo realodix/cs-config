@@ -6,8 +6,8 @@ final class LaravelRisky extends AbstractRules
 {
     protected function rules(): array
     {
-        // Latest commit 2530a97 on Jan 27 2022
-        // https://github.com/Jubeki/laravel-code-style/blob/main/src/Config.php
+        // Latest commit f2720dc on Jun 23, 2022
+        // https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
         return array_merge(
             (new Laravel)->rules(),
             [
