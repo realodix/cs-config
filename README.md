@@ -1,6 +1,6 @@
 # Realodix CS Config
 
-![PHPVersion](https://img.shields.io/badge/PHP-^7.4|^8-777BB4.svg?style=flat-square)
+![PHPVersion](https://img.shields.io/badge/PHP-^7.1|^8-777BB4.svg?style=flat-square)
 ![Build Status](../../actions/workflows/ci.yml/badge.svg)
 
 This package allows sharing identical [`php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer) formatting rules across all of your projects without copy-and-pasting configuration files.
@@ -13,11 +13,6 @@ You can install this package by using [composer](https://getcomposer.org/):
 ```sh
 composer require --dev realodix/cs-config
 ```
-
-PHP        | Version
----------- | ----------
-^7.1 \| ^8 | 1.0.x
-^7.4 \| ^8 | 1.1.x
 
 ## Configuration
 
@@ -95,7 +90,8 @@ use Realodix\CsConfig\Rules\AbstractRules;
 
 final class MyRules extends AbstractRules
 {
-    // public string $name = 'Personal CS';
+    /** @var string */
+    // public $name = 'Personal CS';
 
     protected function rules(): array
     {
