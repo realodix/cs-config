@@ -98,7 +98,6 @@ final class Laravel extends AbstractRules
             'no_short_bool_cast'                          => true,
             'no_singleline_whitespace_before_semicolons'  => true,
             'no_spaces_after_function_name'               => true,
-            'no_space_around_double_colon'                => true,
             'no_spaces_around_offset'                     => [
                 'positions' => ['inside', 'outside'],
             ],
@@ -173,6 +172,7 @@ final class Laravel extends AbstractRules
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $rules = [
                 'integer_literal_case' => true,
+                'no_space_around_double_colon' => true,
             ];
         }
 
