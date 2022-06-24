@@ -18,7 +18,10 @@ final class LaravelPhpdocOrderFixer implements FixerInterface
 
     public function getDefinition(): FixerDefinitionInterface
     {
-        return new FixerDefinition('Annotations must respect the following order: @param, @return, and @throws.', []);
+        return new FixerDefinition(
+            'Annotations must respect the following order: @param, @return, and @throws.',
+            []
+        );
     }
 
     public function getPriority(): int

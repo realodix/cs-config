@@ -18,7 +18,10 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
 
     public function getDefinition(): FixerDefinitionInterface
     {
-        return new FixerDefinition('@param and type definition must be followed by two spaces.', []);
+        return new FixerDefinition(
+            '@param and type definition must be followed by two spaces.',
+            []
+        );
     }
 
     public function getPriority(): int
