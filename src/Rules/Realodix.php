@@ -32,15 +32,6 @@ final class Realodix extends AbstractRules
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order'           => true,
 
-            'phpdoc_align' => [
-                // align_phpdoc
-                'tags' => [
-                    'param',
-                    'throws', 'type', 'var',
-                    // 'return',
-                ],
-            ],
-
             Fixer\CommentSurroundedBySpacesFixer::name()           => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
             Fixer\NoDuplicatedImportsFixer::name()                 => true,

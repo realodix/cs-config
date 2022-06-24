@@ -48,7 +48,7 @@ final class LaravelPhpdocOrderFixer extends AbstractFixer
     /**
      * Moves to the @params annotations on the given content.
      *
-     * @param string $content
+     * @param  string  $content
      * @return string
      */
     private function moveParamAnnotations($content)
@@ -80,7 +80,7 @@ final class LaravelPhpdocOrderFixer extends AbstractFixer
     /**
      * Moves to the @throws annotations on the given content.
      *
-     * @param string $content
+     * @param  string  $content
      * @return string
      */
     private function moveThrowsAnnotations($content)

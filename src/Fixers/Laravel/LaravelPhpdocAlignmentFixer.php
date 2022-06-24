@@ -8,7 +8,6 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
-use SplFileInfo;
 
 class LaravelPhpdocAlignmentFixer implements FixerInterface
 {
@@ -27,7 +26,7 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
         return false;
     }
 
-    public function fix(SplFileInfo $file, Tokens $tokens): void
+    public function fix(\SplFileInfo $file, Tokens $tokens): void
     {
         for ($index = $tokens->count() - 1; $index > 0; $index--) {
             if (! $tokens[$index]->isGivenKind([\T_DOC_COMMENT])) {
@@ -60,7 +59,7 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
         return -42;
     }
 
-    public function supports(SplFileInfo $file): bool
+    public function supports(\SplFileInfo $file): bool
     {
         return true;
     }
