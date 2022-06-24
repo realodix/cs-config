@@ -11,6 +11,11 @@ class Config
     {
         return (new \PhpCsFixer\Config($rules->getName()))
                 ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
+                ->registerCustomFixers([
+                    new Fixers\Laravel\LaravelPhpdocOrderFixer,
+                    new Fixers\Laravel\LaravelPhpdocSeparationFixer,
+                    new Fixers\Laravel\LaravelPhpdocAlignmentFixer,
+                ])
                 ->setRiskyAllowed(true)
                 ->setRules($rules->getRules());
     }

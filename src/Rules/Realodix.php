@@ -38,14 +38,14 @@ final class Realodix extends AbstractRules
             'phpdoc_var_annotation_correct_order'           => true,
             'single_line_comment_spacing'                   => true,
 
-            'phpdoc_align' => [
-                // align_phpdoc
-                'tags' => [
-                    'param',
-                    'throws', 'type', 'var',
-                    // 'return',
-                ],
-            ],
+            // 'phpdoc_align' => [
+            //     // align_phpdoc
+            //     'tags' => [
+            //         'param',
+            //         'throws', 'type', 'var',
+            //         // 'return',
+            //     ],
+            // ],
 
             Fixer\CommentSurroundedBySpacesFixer::name()           => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
