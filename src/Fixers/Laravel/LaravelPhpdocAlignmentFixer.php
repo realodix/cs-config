@@ -12,33 +12,21 @@ use SplFileInfo;
 
 class LaravelPhpdocAlignmentFixer implements FixerInterface
 {
-    /**
-     * @inheritdoc
-     */
     public function getName(): string
     {
         return 'Laravel/laravel_phpdoc_alignment';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isAnyTokenKindsFound([T_DOC_COMMENT]);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function isRisky(): bool
     {
         return false;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function fix(SplFileInfo $file, Tokens $tokens): void
     {
         for ($index = $tokens->count() - 1; $index > 0; $index--) {
@@ -48,7 +36,9 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
 
             $newContent = preg_replace_callback(
                 '/(?P<tag>@param)\s+(?P<hint>(?:'.TypeExpression::REGEX_TYPES.')?)\s+(?P<var>(?:&|\.{3})?\$\S+)/ux',
-                fn ($matches) => $matches['tag'].'  '.$matches['hint'].'  '.$matches['var'],
+                function ($matches) {
+                    return $matches['tag'].'  '.$matches['hint'].'  '.$matches['var'];
+                },
                 $tokens[$index]->getContent()
             );
 
@@ -60,25 +50,16 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
         }
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition('@param and type definition must be followed by two spaces.', []);
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getPriority(): int
     {
         return -42;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function supports(SplFileInfo $file): bool
     {
         return true;
