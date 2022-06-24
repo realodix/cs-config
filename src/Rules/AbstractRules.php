@@ -6,7 +6,7 @@ use Realodix\CsConfig\Helper\ClassHelper;
 
 abstract class AbstractRules implements RulesInterface
 {
-    protected string $name;
+    protected string $name = '';
 
     protected array $additional = [];
 
@@ -19,7 +19,7 @@ abstract class AbstractRules implements RulesInterface
 
     public function getName(): string
     {
-        if (isset($this->name)) {
+        if ($this->name !== '') {
             return $this->name;
         }
 

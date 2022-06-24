@@ -28,9 +28,4 @@
       <code>remove</code>
     </PossiblyNullReference>
   </file>
-  <file src="src/Rules/AbstractRules.php">
-    <RedundantPropertyInitializationCheck occurrences="1">
-      <code>isset($this-&gt;name)</code>
-    </RedundantPropertyInitializationCheck>
-  </file>
 </files>
