@@ -22,13 +22,15 @@ abstract class RulesTestCase extends TestCase
         return new $class($args);
     }
 
+    /**
+     * Remove PHP-CS-Fixer rule sets (@...) and custom fixer
+     */
     protected function getCleanedRules(): array
     {
-        // Bersihkan dari rulset dan custom fixer
         $rules = $this->getRulesClass()->getRules();
 
         foreach ($rules as $key => $value) {
-            if (preg_match('/^(@|PhpCsFixer)/', $key)) {
+            if (preg_match('/^(@|[a-zA-Z0-9]+\/)/', $key)) {
                 unset($rules[$key]);
             }
         }
