@@ -20,16 +20,16 @@ final class Laravel extends AbstractRules
             'blank_line_before_statement'  => [
                 'statements' => ['return'],
             ],
-            'braces'      => true,
-            'cast_spaces' => true,
-            // 'class_attributes_separation' => [
-            //     'elements' => [
-            //         'const'        => 'one',
-            //         'method'       => 'one',
-            //         'property'     => 'one',
-            //         'trait_import' => 'none',
-            //     ],
-            // ],
+            'braces'                      => true,
+            'cast_spaces'                 => true,
+            'class_attributes_separation' => [
+                'elements' => [
+                    'const'        => 'one',
+                    'method'       => 'one',
+                    'property'     => 'one',
+                    'trait_import' => 'none',
+                ],
+            ],
             'class_definition' => [
                 'multi_line_extends_each_single_line' => true,
                 'single_item_single_line'             => true,
