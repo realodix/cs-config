@@ -19,7 +19,12 @@ class Finder
             ->in($baseDir)
             ->ignoreVCS(true)
             ->ignoreDotFiles(true)
-            ->notName('*.blade.php');
+            ->notName([
+                '_ide_helper_actions.php',
+                '_ide_helper_models.php',
+                '_ide_helper.php',
+                '.phpstorm.meta.php',
+            ]);
     }
 
     public static function laravel(string $baseDir): PhpCsFixerFinder
@@ -30,6 +35,8 @@ class Finder
                 'public',
                 'resources',
                 'storage',
-            ]);
+                'node_modules',
+            ])
+            ->notName('*.blade.php');
     }
 }
