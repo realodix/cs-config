@@ -8,7 +8,7 @@ final class Laravel extends AbstractRules
     {
         // Latest commit 2530a97 on Jan 27 2022
         // https://github.com/Jubeki/laravel-code-style/blob/main/src/Config.php
-        return [
+        $baseRule = [
             'array_indentation'      => true,
             'array_syntax'           => ['syntax' => 'short'],
             'binary_operator_spaces' => [
@@ -164,6 +164,8 @@ final class Laravel extends AbstractRules
             'Laravel/laravel_phpdoc_order'      => true,
             'Laravel/laravel_phpdoc_separation' => true,
         ];
+
+        return array_merge($baseRule, $this->compatibilityMode());
     }
 
     private function compatibilityMode(): array
