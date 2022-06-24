@@ -7,6 +7,7 @@ use Realodix\CsConfig\Helper\ClassHelper;
 abstract class AbstractRules implements RulesInterface
 {
     protected string $name;
+
     protected array $additional = [];
 
     abstract protected function rules(): array;
