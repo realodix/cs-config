@@ -14,10 +14,13 @@ final class Realodix extends AbstractRules
             /*
              * Modify
              */
-            'phpdoc_summary'          => false,
-            'ternary_operator_spaces' => false,
-            'unary_operator_spaces'   => false,
-            'binary_operator_spaces'  => ['operators' => ['=>' => 'single_space']],
+            'phpdoc_summary'                    => false,
+            'ternary_operator_spaces'           => false,
+            'unary_operator_spaces'             => false,
+            'Laravel/laravel_phpdoc_alignment'  => false,
+            'Laravel/laravel_phpdoc_order'      => false,
+            'Laravel/laravel_phpdoc_separation' => false,
+            'binary_operator_spaces'            => ['operators' => ['=>' => 'single_space']],
 
             /*
              * Addition
@@ -31,15 +34,17 @@ final class Realodix extends AbstractRules
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order'           => true,
 
+            // Relates to changes to `Laravel/laravel_` rules
             'phpdoc_align' => [
                 // align_phpdoc
                 'tags' => [
-                    // @param is already in Laravel
-                    // 'param',
+                    'param',
                     'throws', 'type', 'var',
                     'return',
                 ],
             ],
+            'phpdoc_separation' => true,
+            'phpdoc_order'      => true,
 
             Fixer\CommentSurroundedBySpacesFixer::name()           => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
