@@ -7,7 +7,7 @@ class ClassHelper
     /**
      * Get the class basename.
      *
-     * @param  object  $class
+     * @param object $class
      */
     public static function classBasename($class): string
     {
