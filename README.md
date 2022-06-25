@@ -49,6 +49,9 @@ return Config::create(new Realodix)
 :bulb: Namespace `Realodix\CsConfig\Rules\`
 
 **Custom Fixers**
+- [`Laravel/laravel_phpdoc_alignment`](src/Fixers/Laravel/LaravelPhpdocAlignmentFixer.php)
+- [`Laravel/laravel_phpdoc_order`](src/Fixers/Laravel/LaravelPhpdocOrderFixer.php)
+- [`Laravel/laravel_phpdoc_separation`](src/Fixers/Laravel/LaravelPhpdocSeparationFixer.php)
 - [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
 
 :bulb: It's already registered, so you no longer need to register it via `registerCustomFixers()`.

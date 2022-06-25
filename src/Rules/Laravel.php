@@ -11,8 +11,8 @@ final class Laravel extends AbstractRules
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
      *
      * Not included
-     * - https://github.com/laravel/pint/commit/76ed946c18f08f57c58ac79b80b7be2b5d630a24
-     * - https://github.com/laravel/pint/commit/9aa45383c1e5ab3b35d14e825b90a56123a76158
+     * - Just preset
+     *   https://github.com/laravel/pint/commit/76ed946c18f08f57c58ac79b80b7be2b5d630a24
      */
     protected function rules(): array
     {
@@ -33,7 +33,13 @@ final class Laravel extends AbstractRules
             'blank_line_before_statement'  => [
                 'statements' => ['return'],
             ],
-            'braces'                      => true,
+            'braces' => [
+                'allow_single_line_anonymous_class_with_empty_body' => true,
+                'allow_single_line_closure'                         => true,
+                'position_after_control_structures'                 => 'same',
+                'position_after_functions_and_oop_constructs'       => 'next',
+                'position_after_anonymous_constructs'               => 'next',
+            ],
             'cast_spaces'                 => true,
             'class_attributes_separation' => [
                 'elements' => [
