@@ -8,10 +8,15 @@ use Realodix\CsConfig\Rules\AbstractRules;
 
 class AbstractRulesTest extends TestCase
 {
+    private function nameCleanup($value)
+    {
+        return preg_replace('/\s[a-zA-Z0-9]+$/', '', $value);
+    }
+
     public function testGetDefaultNameRules(): void
     {
-        $actual = (new DefaultName)->getName();
-        $expected = ClassHelper::classBasename(new DefaultName).' CS';
+        $actual = $this->nameCleanup((new DefaultName)->getName());
+        $expected = ClassHelper::classBasename(new DefaultName);
 
         $this->assertSame($expected, $actual);
     }
