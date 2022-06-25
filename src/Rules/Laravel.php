@@ -4,10 +4,14 @@ namespace Realodix\CsConfig\Rules;
 
 final class Laravel extends AbstractRules
 {
+    /**
+     * Ruleset used by Laravel Pint
+     *
+     * Latest commit f2720dc on Jun 23, 2022
+     * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
+     */
     protected function rules(): array
     {
-        // Latest commit f2720dc on Jun 23, 2022
-        // https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
         $baseRule = [
             'psr_autoloading'        => false,
             'phpdoc_summary'         => false,
@@ -165,6 +169,9 @@ final class Laravel extends AbstractRules
         return array_merge($baseRule, $this->compatibilityMode());
     }
 
+    /**
+     * Return empty array if PHP version doesn't support
+     */
     private function compatibilityMode(): array
     {
         $rules = [];

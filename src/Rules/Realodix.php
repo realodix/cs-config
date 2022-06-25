@@ -54,6 +54,9 @@ final class Realodix extends AbstractRules
         return array_merge($baseRules, $rules, $this->compatibilityMode());
     }
 
+    /**
+     * Return empty array if PHP version doesn't support
+     */
     private function compatibilityMode(): array
     {
         $php74 = [];
