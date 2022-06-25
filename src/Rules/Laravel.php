@@ -7,8 +7,12 @@ final class Laravel extends AbstractRules
     /**
      * Ruleset used by Laravel Pint
      *
-     * Latest commit f2720dc on Jun 23, 2022
+     * Latest commit 62b24a9 on Jun 25, 2022
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
+     *
+     * Not included
+     * - https://github.com/laravel/pint/commit/76ed946c18f08f57c58ac79b80b7be2b5d630a24
+     * - https://github.com/laravel/pint/commit/9aa45383c1e5ab3b35d14e825b90a56123a76158
      */
     protected function rules(): array
     {
