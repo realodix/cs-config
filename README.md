@@ -14,10 +14,10 @@ You can install this package by using [composer](https://getcomposer.org/):
 composer require --dev realodix/cs-config
 ```
 
-PHP        | Version
----------- | ----------
-^7.1 \| ^8 | 1.0.x
-^7.4 \| ^8 | 1.1.x
+PHP          | Version
+------------ | ----------
+`7.1 - 8.x` | `1.0.x`
+`7.4 - 8.x` | `1.1.x`
 
 ## Configuration
 
