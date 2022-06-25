@@ -18,7 +18,6 @@ final class Realodix extends AbstractRules
             'ternary_operator_spaces' => false,
             'unary_operator_spaces'   => false,
             'binary_operator_spaces'  => ['operators' => ['=>' => 'single_space']],
-            'class_definition'        => true,
             'method_argument_space'   => ['after_heredoc' => true],
 
             /*
