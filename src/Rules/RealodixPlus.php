@@ -6,6 +6,11 @@ use PhpCsFixerCustomFixers\Fixer;
 
 final class RealodixPlus extends AbstractRules
 {
+    /**
+     * Inherits Realodix preset
+     *
+     * @see Realodix\CsConfig\Rules\Realodix
+     */
     protected function rules(): array
     {
         $baseRules = (new Realodix)->rules();
