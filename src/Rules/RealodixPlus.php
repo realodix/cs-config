@@ -16,12 +16,10 @@ final class RealodixPlus extends AbstractRules
         $baseRules = (new Realodix)->rules();
 
         $rules = [
-            'explicit_string_variable'            => true,
-            'new_with_braces'                     => true,
-            'no_superfluous_elseif'               => true,
-            'no_superfluous_phpdoc_tags'          => ['allow_mixed' => true, 'allow_unused_params' => true],
-            'phpdoc_add_missing_param_annotation' => ['only_untyped' => false],
-            'general_phpdoc_annotation_remove'    => [
+            'explicit_string_variable'         => true,
+            'new_with_braces'                  => true,
+            'no_superfluous_elseif'            => true,
+            'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/f86c16aedb/lib/Doctrine/Rules.xml#L192
                     'api', 'author', 'category', 'copyright', 'created', 'license', 'package', 'since',

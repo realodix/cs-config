@@ -71,10 +71,6 @@ final class LaravelPhpdocSeparationFixer implements FixerInterface
 
     /**
      * Make sure the description is separated from the annotations.
-     *
-     * @param \PhpCsFixer\DocBlock\DocBlock $doc
-     *
-     * @return void
      */
     protected function fixDescription(DocBlock $doc): void
     {
@@ -97,10 +93,6 @@ final class LaravelPhpdocSeparationFixer implements FixerInterface
 
     /**
      * Make sure the annotations are correctly separated.
-     *
-     * @param \PhpCsFixer\DocBlock\DocBlock $doc
-     *
-     * @return void
      */
     protected function fixAnnotations(DocBlock $doc): void
     {
@@ -123,12 +115,6 @@ final class LaravelPhpdocSeparationFixer implements FixerInterface
 
     /**
      * Ensure the given annotations to immediately follow each other.
-     *
-     * @param \PhpCsFixer\DocBlock\DocBlock   $doc
-     * @param \PhpCsFixer\DocBlock\Annotation $annotation
-     * @param \PhpCsFixer\DocBlock\Annotation $next
-     *
-     * @return void
      */
     protected function ensureAreTogether(DocBlock $doc, Annotation $first, Annotation $second): void
     {
@@ -142,12 +128,6 @@ final class LaravelPhpdocSeparationFixer implements FixerInterface
 
     /**
      * Ensure the given annotations to have one empty line between each other.
-     *
-     * @param \PhpCsFixer\DocBlock\DocBlock   $doc
-     * @param \PhpCsFixer\DocBlock\Annotation $annotation
-     * @param \PhpCsFixer\DocBlock\Annotation $next
-     *
-     * @return void
      */
     protected function ensureAreSeparate(DocBlock $doc, Annotation $first, Annotation $second): void
     {
@@ -168,11 +148,6 @@ final class LaravelPhpdocSeparationFixer implements FixerInterface
 
     /**
      * If the given tags should be together or apart.
-     *
-     * @param \PhpCsFixer\DocBlock\Tag $first
-     * @param \PhpCsFixer\DocBlock\Tag $second
-     *
-     * @return bool
      */
     protected function shouldBeTogether(Tag $first, Tag $second): bool
     {
