@@ -8,8 +8,7 @@ class Finder
 {
     public static function onlyExistingPaths(array $paths): array
     {
-        return array_filter($paths, function (string $path)
-        {
+        return array_filter($paths, function (string $path) {
             return file_exists($path) && is_dir($path);
         });
     }
