@@ -7,11 +7,11 @@ final class Laravel extends AbstractRules
     /**
      * Ruleset used by Laravel Pint
      *
-     * Latest commit 62b24a9 on Jun 25, 2022
+     * Latest commit 62b24a9 on Jul 2, 2022
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
      *
      * Not included
-     * - Just preset
+     * - scripts/ModifiesVendor.php
      *   https://github.com/laravel/pint/commit/76ed946c18f08f57c58ac79b80b7be2b5d630a24
      */
     protected function rules(): array
@@ -25,8 +25,7 @@ final class Laravel extends AbstractRules
             'array_indentation'      => true,
             'array_syntax'           => ['syntax' => 'short'],
             'binary_operator_spaces' => [
-                'default'   => 'single_space',
-                'operators' => ['=>' => null],
+                'default' => 'single_space',
             ],
             'blank_line_after_namespace'   => true,
             'blank_line_after_opening_tag' => true,
@@ -76,11 +75,12 @@ final class Laravel extends AbstractRules
             'lambda_not_used_import'       => true,
             'line_ending'                  => true,
             'linebreak_after_opening_tag'  => true,
+            'list_syntax'                  => true,
             'lowercase_cast'               => true,
             'lowercase_keywords'           => true,
             'lowercase_static_reference'   => true,
-            'magic_method_casing'          => true,
             'magic_constant_casing'        => true,
+            'magic_method_casing'          => true,
             'method_argument_space'        => [
                 'on_multiline' => 'ignore',
             ],
@@ -142,15 +142,19 @@ final class Laravel extends AbstractRules
             'phpdoc_no_useless_inheritdoc'        => true,
             'phpdoc_scalar'                       => true,
             'phpdoc_single_line_var_spacing'      => true,
-            'phpdoc_tag_type'                     => true,
-            'phpdoc_trim'                         => true,
-            'phpdoc_types'                        => true,
-            'phpdoc_var_without_name'             => true,
-            'return_type_declaration'             => ['space_before' => 'none'],
-            'short_scalar_cast'                   => true,
-            'single_blank_line_at_eof'            => true,
-            'single_blank_line_before_namespace'  => true,
-            'single_class_element_per_statement'  => [
+            'phpdoc_tag_type'                     => [
+                'tags' => [
+                    'inheritdoc' => 'inline',
+                ],
+            ],
+            'phpdoc_trim'                        => true,
+            'phpdoc_types'                       => true,
+            'phpdoc_var_without_name'            => true,
+            'return_type_declaration'            => ['space_before' => 'none'],
+            'short_scalar_cast'                  => true,
+            'single_blank_line_at_eof'           => true,
+            'single_blank_line_before_namespace' => true,
+            'single_class_element_per_statement' => [
                 'elements' => ['const', 'property'],
             ],
             'single_import_per_statement' => true,
