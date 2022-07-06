@@ -11,7 +11,7 @@ final class Laravel extends AbstractRules
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
      *
      * Not included
-     * - Just preset
+     * - scripts/ModifiesVendor.php
      *   https://github.com/laravel/pint/commit/76ed946c18f08f57c58ac79b80b7be2b5d630a24
      */
     protected function rules(): array
