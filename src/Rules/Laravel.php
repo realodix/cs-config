@@ -25,7 +25,7 @@ final class Laravel extends AbstractRules
             'array_indentation'      => true,
             'array_syntax'           => ['syntax' => 'short'],
             'binary_operator_spaces' => [
-                'default'   => 'single_space',
+                'default' => 'single_space',
             ],
             'blank_line_after_namespace'   => true,
             'blank_line_after_opening_tag' => true,
@@ -140,19 +140,19 @@ final class Laravel extends AbstractRules
             'phpdoc_no_useless_inheritdoc'        => true,
             'phpdoc_scalar'                       => true,
             'phpdoc_single_line_var_spacing'      => true,
-            'phpdoc_tag_type' => [
+            'phpdoc_tag_type'                     => [
                 'tags' => [
                     'inheritdoc' => 'inline',
                 ],
             ],
-            'phpdoc_trim'                         => true,
-            'phpdoc_types'                        => true,
-            'phpdoc_var_without_name'             => true,
-            'return_type_declaration'             => ['space_before' => 'none'],
-            'short_scalar_cast'                   => true,
-            'single_blank_line_at_eof'            => true,
-            'single_blank_line_before_namespace'  => true,
-            'single_class_element_per_statement'  => [
+            'phpdoc_trim'                        => true,
+            'phpdoc_types'                       => true,
+            'phpdoc_var_without_name'            => true,
+            'return_type_declaration'            => ['space_before' => 'none'],
+            'short_scalar_cast'                  => true,
+            'single_blank_line_at_eof'           => true,
+            'single_blank_line_before_namespace' => true,
+            'single_class_element_per_statement' => [
                 'elements' => ['const', 'property'],
             ],
             'single_import_per_statement' => true,
