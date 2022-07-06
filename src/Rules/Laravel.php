@@ -140,7 +140,11 @@ final class Laravel extends AbstractRules
             'phpdoc_no_useless_inheritdoc'        => true,
             'phpdoc_scalar'                       => true,
             'phpdoc_single_line_var_spacing'      => true,
-            'phpdoc_tag_type'                     => true,
+            'phpdoc_tag_type' => [
+                'tags' => [
+                    'inheritdoc' => 'inline',
+                ],
+            ],
             'phpdoc_trim'                         => true,
             'phpdoc_types'                        => true,
             'phpdoc_var_without_name'             => true,
