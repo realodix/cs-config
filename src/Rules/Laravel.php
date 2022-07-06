@@ -7,7 +7,7 @@ final class Laravel extends AbstractRules
     /**
      * Ruleset used by Laravel Pint
      *
-     * Latest commit 62b24a9 on Jun 25, 2022
+     * Latest commit 62b24a9 on Jul 1, 2022
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
      *
      * Not included
@@ -73,13 +73,14 @@ final class Laravel extends AbstractRules
             'increment_style'              => ['style' => 'post'],
             'indentation_type'             => true,
             'lambda_not_used_import'       => true,
-            'linebreak_after_opening_tag'  => true,
             'line_ending'                  => true,
+            'linebreak_after_opening_tag'  => true,
+            'list_syntax'                  => true,
             'lowercase_cast'               => true,
             'lowercase_keywords'           => true,
             'lowercase_static_reference'   => true,
-            'magic_method_casing'          => true,
             'magic_constant_casing'        => true,
+            'magic_method_casing'          => true,
             'method_argument_space'        => [
                 'on_multiline' => 'ignore',
             ],
