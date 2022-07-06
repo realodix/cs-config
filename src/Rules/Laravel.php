@@ -7,7 +7,7 @@ final class Laravel extends AbstractRules
     /**
      * Ruleset used by Laravel Pint
      *
-     * Latest commit 62b24a9 on Jul 1, 2022
+     * Latest commit 62b24a9 on Jul 2, 2022
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
      *
      * Not included
@@ -26,7 +26,6 @@ final class Laravel extends AbstractRules
             'array_syntax'           => ['syntax' => 'short'],
             'binary_operator_spaces' => [
                 'default'   => 'single_space',
-                'operators' => ['=>' => null],
             ],
             'blank_line_after_namespace'   => true,
             'blank_line_after_opening_tag' => true,
