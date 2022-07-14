@@ -41,6 +41,7 @@ final class Realodix extends AbstractRules
             'phpdoc_to_comment'                             => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order'           => true,
+            'simple_to_complex_string_variable'             => true,
             'single_line_comment_spacing'                   => true,
 
             // Relates to changes to `Laravel/laravel_` rules
