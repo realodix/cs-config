@@ -21,7 +21,6 @@ final class Realodix extends AbstractRules
             'Laravel/laravel_phpdoc_order'      => false,
             'Laravel/laravel_phpdoc_separation' => false,
             'binary_operator_spaces'            => ['operators' => ['=>' => 'single_space']],
-            'braces'                            => true,
 
             /*
              * Addition
