@@ -76,7 +76,7 @@ final class Realodix extends AbstractRules
                 // Addition
                 'class_reference_name_casing'                   => true,
                 'curly_braces_position'                         => ['anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end'],
-                'new_with_braces'                               => ['named_class' => false],
+                'new_with_braces'                               => ['named_class' => false, 'anonymous_class' => false],
                 'no_trailing_comma_in_singleline_function_call' => true,
                 'no_unneeded_import_alias'                      => true,
                 'single_line_comment_spacing'                   => true,
