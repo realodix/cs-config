@@ -73,6 +73,13 @@ final class Realodix extends AbstractRules
 
         if (version_compare(PHP_VERSION, '7.4.0', '>=')) {
             $php74 = [
+                // Modify
+                'curly_braces_position' => [
+                    'anonymous_classes_opening_brace'           => 'next_line_unless_newline_at_signature_end',
+                    'allow_single_line_empty_anonymous_classes' => true,
+                    'allow_single_line_anonymous_functions'     => true,
+                ],
+
                 // Addition
                 'class_reference_name_casing'                   => true,
                 'new_with_braces'                               => ['named_class' => false, 'anonymous_class' => false],
