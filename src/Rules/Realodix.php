@@ -28,7 +28,6 @@ final class Realodix extends AbstractRules
              */
             'class_reference_name_casing'                   => true,
             'combine_consecutive_unsets'                    => true,
-            'curly_braces_position'                         => ['anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end'],
             'fully_qualified_strict_types'                  => true,
             'new_with_braces'                               => ['named_class' => false, 'anonymous_class' => false],
             'no_empty_comment'                              => true,
