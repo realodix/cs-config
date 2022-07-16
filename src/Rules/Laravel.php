@@ -7,20 +7,17 @@ final class Laravel extends AbstractRules
     /**
      * Ruleset used by Laravel Pint
      *
-     * Latest commit 62b24a9 on Jul 2, 2022
+     * Latest commit c598b68 on Jul 14, 2022
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
-     *
-     * Not included
-     * - scripts/ModifiesVendor.php
-     *   https://github.com/laravel/pint/commit/76ed946c18f08f57c58ac79b80b7be2b5d630a24
      */
     protected function rules(): array
     {
         $baseRule = [
-            'psr_autoloading'        => false,
             'phpdoc_summary'         => false,
             'phpdoc_to_comment'      => false,
+            'psr_autoloading'        => false,
             'simplified_null_return' => false,
+            'statement_indentation'  => false,
 
             'array_indentation'      => true,
             'array_syntax'           => ['syntax' => 'short'],
@@ -188,15 +185,30 @@ final class Laravel extends AbstractRules
      */
     private function compatibilityMode(): array
     {
-        $rules = [];
+        $php74 = [];
+        $php72 = [];
+
+        if (version_compare(PHP_VERSION, '7.4.0', '>=')) {
+            $php74 = [
+                'curly_braces_position' => [
+                    'control_structures_opening_brace'          => 'same_line',
+                    'functions_opening_brace'                   => 'next_line_unless_newline_at_signature_end',
+                    'anonymous_functions_opening_brace'         => 'same_line',
+                    'classes_opening_brace'                     => 'next_line_unless_newline_at_signature_end',
+                    'anonymous_classes_opening_brace'           => 'next_line_unless_newline_at_signature_end',
+                    'allow_single_line_empty_anonymous_classes' => false,
+                    'allow_single_line_anonymous_functions'     => false,
+                ],
+            ];
+        }
 
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
-            $rules = [
+            $php72 = [
                 'integer_literal_case'         => true,
                 'no_space_around_double_colon' => true,
             ];
         }
 
-        return $rules;
+        return array_merge($php74, $php72);
     }
 }
