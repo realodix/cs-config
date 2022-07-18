@@ -16,7 +16,7 @@ composer require --dev realodix/cs-config
 
 PHP          | Version
 ------------ | ----------
-`7.1 - 7.4` | `1.0.x`
+`>= 7.1` | `1.0.x`
 `7.4 - 8.x` | `1.1.x`
 
 ## Configuration
