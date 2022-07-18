@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": ">=7.1",
         "friendsofphp/php-cs-fixer": "^2.16|^3.2",
         "kubawerlos/php-cs-fixer-custom-fixers": "^1.17|^2.5|^3.7"
     },
