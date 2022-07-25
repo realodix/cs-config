@@ -31,7 +31,6 @@ final class Realodix extends AbstractRules
             'no_superfluous_phpdoc_tags'                    => ['allow_mixed' => true, 'allow_unused_params' => true],
             'no_useless_else'                               => true,
             'php_unit_method_casing'                        => true,
-            'phpdoc_add_missing_param_annotation'           => ['only_untyped' => false],
             'phpdoc_to_comment'                             => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order'           => true,
