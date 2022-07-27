@@ -1,6 +1,6 @@
 # Realodix CS Config
 
-![PHPVersion](https://img.shields.io/badge/PHP-7.4|%208-777BB4.svg?style=flat-square)
+![PHPVersion](https://img.shields.io/badge/PHP-7.4%20|%208-777BB4.svg?style=flat-square)
 ![Build Status](../../actions/workflows/ci.yml/badge.svg)
 
 This package allows sharing identical [`php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer) formatting rules across all of your projects without copy-and-pasting configuration files.
