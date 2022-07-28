@@ -6,8 +6,8 @@ final class Spatie extends AbstractRules
 {
     protected function rules(): array
     {
-        // Latest commit 27a7ad7 on Sep 7, 2021
-        // https://github.com/spatie/laravel-permission/blob/main/.php_cs.dist.php
+        // Latest commit a312900 on Nov 15, 2021
+        // https://github.com/spatie/temporary-directory/blob/main/.php-cs-fixer.dist.php
         return [
             '@PSR12' => true,
             'array_syntax' => ['syntax' => 'short'],
