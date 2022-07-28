@@ -17,7 +17,6 @@ final class RealodixPlus extends AbstractRules
 
         $rules = [
             'explicit_string_variable' => true,
-            'new_with_braces' => true,
             'no_superfluous_elseif' => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
