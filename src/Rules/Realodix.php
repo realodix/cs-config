@@ -51,6 +51,7 @@ final class Realodix extends AbstractRules
             Fixer\CommentSurroundedBySpacesFixer::name() => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
             Fixer\NoDuplicatedImportsFixer::name() => true,
+            Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name() => true,
             Fixer\PhpdocParamOrderFixer::name() => true,
             Fixer\PhpdocParamTypeFixer::name() => true,
