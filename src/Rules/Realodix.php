@@ -75,6 +75,8 @@ final class Realodix extends AbstractRules
             Fixer\PhpdocSelfAccessorFixer::name() => true,
             Fixer\PhpdocTypesCommaSpacesFixer::name() => true,
             Fixer\PhpdocTypesTrimFixer::name() => true,
+            Fixer\SingleSpaceAfterStatementFixer::name() => true,
+            Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
         return array_merge($baseRules, $rules);
