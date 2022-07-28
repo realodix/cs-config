@@ -65,6 +65,8 @@ final class Realodix extends AbstractRules
             Fixer\NoDuplicatedImportsFixer::name() => true,
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
             Fixer\NoUselessParenthesisFixer::name() => true,
+            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
+            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name() => true,
             Fixer\PhpdocParamOrderFixer::name() => true,
             Fixer\PhpdocParamTypeFixer::name() => true,
