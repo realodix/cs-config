@@ -30,7 +30,6 @@ final class RealodixPlus extends AbstractRules
             ],
 
             Fixer\NoUselessCommentFixer::name() => true,
-            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
             Fixer\SingleSpaceAfterStatementFixer::name() => true,
             Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
