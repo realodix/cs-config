@@ -30,7 +30,6 @@ final class RealodixPlus extends AbstractRules
             ],
 
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoLeadingSlashInGlobalNamespaceFixer::name() => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\NoUselessCommentFixer::name() => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
