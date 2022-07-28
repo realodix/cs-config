@@ -61,7 +61,7 @@ final class Realodix extends AbstractRules
             Fixer\PhpdocParamTypeFixer::name() => true,
             Fixer\PhpdocSelfAccessorFixer::name() => true,
             Fixer\PhpdocTypesTrimFixer::name() => true,
-            Fixer\SingleSpaceAfterStatementFixer::name() => true,
+            Fixer\SingleSpaceAfterStatementFixer::name() => ['allow_linebreak' => true],
             Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
