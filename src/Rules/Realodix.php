@@ -50,13 +50,19 @@ final class Realodix extends AbstractRules
 
             Fixer\CommentSurroundedBySpacesFixer::name() => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
+            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoDuplicatedImportsFixer::name() => true,
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
+            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
+            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name() => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
             Fixer\PhpdocParamOrderFixer::name() => true,
             Fixer\PhpdocParamTypeFixer::name() => true,
             Fixer\PhpdocSelfAccessorFixer::name() => true,
             Fixer\PhpdocTypesTrimFixer::name() => true,
+            Fixer\SingleSpaceAfterStatementFixer::name() => true,
+            Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
         return array_merge($baseRules, $rules, $this->compatibilityMode());

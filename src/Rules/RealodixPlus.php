@@ -29,13 +29,7 @@ final class RealodixPlus extends AbstractRules
                 ],
             ],
 
-            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\NoUselessCommentFixer::name() => true,
-            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
-            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
-            Fixer\SingleSpaceAfterStatementFixer::name() => true,
-            Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
         return array_merge($baseRules, $rules);
