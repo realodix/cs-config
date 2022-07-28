@@ -16,9 +16,9 @@ final class RealodixPlus extends AbstractRules
         $baseRules = (new Realodix)->rules();
 
         $rules = [
-            'explicit_string_variable'         => true,
-            'new_with_braces'                  => true,
-            'no_superfluous_elseif'            => true,
+            'explicit_string_variable' => true,
+            'new_with_braces' => true,
+            'no_superfluous_elseif' => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/f86c16aedb/lib/Doctrine/Rules.xml#L192
@@ -30,13 +30,13 @@ final class RealodixPlus extends AbstractRules
             ],
 
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoLeadingSlashInGlobalNamespaceFixer::name()      => true,
-            Fixer\NoPhpStormGeneratedCommentFixer::name()           => true,
-            Fixer\NoUselessCommentFixer::name()                     => true,
-            Fixer\NoUselessDoctrineRepositoryCommentFixer::name()   => true,
-            Fixer\PhpdocNoSuperfluousParamFixer::name()             => true,
-            Fixer\SingleSpaceAfterStatementFixer::name()            => true,
-            Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
+            Fixer\NoLeadingSlashInGlobalNamespaceFixer::name() => true,
+            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
+            Fixer\NoUselessCommentFixer::name() => true,
+            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
+            Fixer\SingleSpaceAfterStatementFixer::name() => true,
+            Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
         return array_merge($baseRules, $rules);
