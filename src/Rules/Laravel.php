@@ -21,14 +21,10 @@ final class Laravel extends AbstractRules
 
             'array_indentation' => true,
             'array_syntax' => ['syntax' => 'short'],
-            'binary_operator_spaces' => [
-                'default' => 'single_space',
-            ],
+            'binary_operator_spaces' => ['default' => 'single_space'],
             'blank_line_after_namespace' => true,
             'blank_line_after_opening_tag' => true,
-            'blank_line_before_statement' => [
-                'statements' => ['return'],
-            ],
+            'blank_line_before_statement' => ['statements' => ['continue', 'return']],
             'braces' => [
                 'allow_single_line_anonymous_class_with_empty_body' => true,
                 'allow_single_line_closure' => true,
@@ -52,9 +48,7 @@ final class Laravel extends AbstractRules
             ],
             'clean_namespace' => true,
             'compact_nullable_typehint' => true,
-            'concat_space' => [
-                'spacing' => 'none',
-            ],
+            'concat_space' => ['spacing' => 'none'],
             'constant_case' => ['case' => 'lower'],
             'curly_braces_position' => [
                 'control_structures_opening_brace' => 'same_line',
@@ -88,9 +82,7 @@ final class Laravel extends AbstractRules
             'magic_constant_casing' => true,
             'magic_method_casing' => true,
             'method_argument_space' => ['on_multiline' => 'ignore'],
-            'multiline_whitespace_before_semicolons' => [
-                'strategy' => 'no_multi_line',
-            ],
+            'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
             'native_function_casing' => true,
             'native_function_type_declaration_casing' => true,
             'no_alias_language_construct_call' => true,
@@ -101,31 +93,21 @@ final class Laravel extends AbstractRules
             'no_closing_tag' => true,
             'no_empty_phpdoc' => true,
             'no_empty_statement' => true,
-            'no_extra_blank_lines' => [
-                'tokens' => [
-                    'extra',
-                    'throw',
-                    'use',
-                ],
-            ],
+            'no_extra_blank_lines' => ['tokens' => ['extra', 'throw', 'use']],
             'no_leading_import_slash' => true,
             'no_leading_namespace_whitespace' => true,
-            'no_mixed_echo_print' => [
-                'use' => 'echo',
-            ],
+            'no_mixed_echo_print' => ['use' => 'echo'],
             'no_multiline_whitespace_around_double_arrow' => true,
             'no_short_bool_cast' => true,
             'no_singleline_whitespace_before_semicolons' => true,
             'no_space_around_double_colon' => true,
             'no_spaces_after_function_name' => true,
-            'no_spaces_around_offset' => [
-                'positions' => ['inside', 'outside'],
-            ],
+            'no_spaces_around_offset' => ['positions' => ['inside', 'outside']],
             'no_spaces_inside_parenthesis' => true,
             'no_trailing_comma_in_list_call' => true,
             'no_trailing_comma_in_singleline_array' => true,
-            'no_trailing_whitespace' => true,
             'no_trailing_whitespace_in_comment' => true,
+            'no_trailing_whitespace' => true,
             'no_unneeded_control_parentheses' => [
                 'statements' => ['break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield'],
             ],
@@ -146,11 +128,7 @@ final class Laravel extends AbstractRules
             'phpdoc_no_useless_inheritdoc' => true,
             'phpdoc_scalar' => true,
             'phpdoc_single_line_var_spacing' => true,
-            'phpdoc_tag_type' => [
-                'tags' => [
-                    'inheritdoc' => 'inline',
-                ],
-            ],
+            'phpdoc_tag_type' => ['tags' => ['inheritdoc' => 'inline']],
             'phpdoc_trim' => true,
             'phpdoc_types' => true,
             'phpdoc_var_without_name' => true,
@@ -158,14 +136,10 @@ final class Laravel extends AbstractRules
             'short_scalar_cast' => true,
             'single_blank_line_at_eof' => true,
             'single_blank_line_before_namespace' => true,
-            'single_class_element_per_statement' => [
-                'elements' => ['const', 'property'],
-            ],
+            'single_class_element_per_statement' => ['elements' => ['const', 'property']],
             'single_import_per_statement' => true,
             'single_line_after_imports' => true,
-            'single_line_comment_style' => [
-                'comment_types' => ['hash'],
-            ],
+            'single_line_comment_style' => ['comment_types' => ['hash']],
             'single_quote' => true,
             'space_after_semicolon' => true,
             'standardize_not_equals' => true,
@@ -175,9 +149,7 @@ final class Laravel extends AbstractRules
             'trailing_comma_in_multiline' => ['elements' => ['arrays']],
             'trim_array_spaces' => true,
             'unary_operator_spaces' => true,
-            'visibility_required' => [
-                'elements' => ['method', 'property'],
-            ],
+            'visibility_required' => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array' => true,
 
             // Laravel
