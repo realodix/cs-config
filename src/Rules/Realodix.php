@@ -25,7 +25,7 @@ final class Realodix extends AbstractRules
                 'allow_single_line_empty_anonymous_classes' => true,
                 'allow_single_line_anonymous_functions' => true,
             ],
-            'method_argument_space' => ['after_heredoc' => true],
+            'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
 
             /*
              * Addition
