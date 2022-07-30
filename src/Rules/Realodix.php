@@ -80,7 +80,7 @@ final class Realodix extends AbstractRules
             $php74 = [
                 // Modify
                 'curly_braces_position' => [
-                    'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end'
+                    'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
                 ],
 
                 // Addition

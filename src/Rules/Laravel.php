@@ -26,9 +26,7 @@ final class Laravel extends AbstractRules
             ],
             'blank_line_after_namespace' => true,
             'blank_line_after_opening_tag' => true,
-            'blank_line_before_statement' => [
-                'statements' => ['return'],
-            ],
+            'blank_line_before_statement' => ['statements' => ['continue', 'return']],
             'braces' => [
                 'allow_single_line_anonymous_class_with_empty_body' => true,
                 'allow_single_line_closure' => true,
