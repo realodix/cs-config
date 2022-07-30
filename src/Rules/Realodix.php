@@ -98,7 +98,7 @@ final class Realodix extends AbstractRules
         if (version_compare(PHP_VERSION, '7.3.0', '>=')) {
             $php73 = [
                 // Modify
-                'method_argument_space' => ['after_heredoc' => true],
+                'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
             ];
         }
 
