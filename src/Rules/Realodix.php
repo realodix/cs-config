@@ -21,7 +21,7 @@ final class Realodix extends AbstractRules
             'Laravel/laravel_phpdoc_order' => false,
             'Laravel/laravel_phpdoc_separation' => false,
             'curly_braces_position' => [
-                'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end'
+                'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
             ],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
 
