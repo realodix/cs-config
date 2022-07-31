@@ -48,9 +48,7 @@ class LaravelPhpdocAlignmentFixer implements FixerInterface
 
             $newContent = preg_replace_callback(
                 '/(?P<tag>@param)\s+(?P<hint>(?:'.TypeExpression::REGEX_TYPES.')?)\s+(?P<var>(?:&|\.{3})?\$\S+)/ux',
-                function ($matches) {
-                    return $matches['tag'].'  '.$matches['hint'].'  '.$matches['var'];
-                },
+                fn ($matches) => $matches['tag'].'  '.$matches['hint'].'  '.$matches['var'],
                 $tokens[$index]->getContent()
             );
 
