@@ -64,7 +64,7 @@ final class Realodix extends AbstractRules
             Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
-        return array_replace_recursive($baseRules, $rules, $this->compatibilityMode());
+        return array_merge($baseRules, $rules, $this->compatibilityMode());
     }
 
     /**

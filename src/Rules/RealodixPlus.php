@@ -31,6 +31,6 @@ final class RealodixPlus extends AbstractRules
             Fixer\NoUselessCommentFixer::name() => true,
         ];
 
-        return array_replace_recursive($baseRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }
