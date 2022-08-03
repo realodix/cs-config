@@ -15,6 +15,7 @@ final class Realodix extends AbstractRules
              * Modify
              */
             'phpdoc_summary' => false,
+            'phpdoc_to_comment' => true,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces' => false,
             'Laravel/laravel_phpdoc_alignment' => false,
@@ -29,7 +30,6 @@ final class Realodix extends AbstractRules
             'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
             'no_useless_else' => true,
             'php_unit_method_casing' => true,
-            'phpdoc_to_comment' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
