@@ -25,7 +25,6 @@ final class Realodix extends AbstractRules
              * Addition
              */
             'combine_consecutive_unsets' => true,
-            'fully_qualified_strict_types' => true,
             'no_empty_comment' => true,
             'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
             'no_useless_else' => true,
