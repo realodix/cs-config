@@ -24,13 +24,13 @@ final class Realodix extends AbstractRules
                 'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
             ],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
+            'phpdoc_to_comment' => true,
 
             /*
              * Addition
              */
             'class_reference_name_casing' => true,
             'combine_consecutive_unsets' => true,
-            'fully_qualified_strict_types' => true,
             'new_with_braces' => ['named_class' => false, 'anonymous_class' => false],
             'no_empty_comment' => true,
             'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
@@ -38,7 +38,6 @@ final class Realodix extends AbstractRules
             'no_unneeded_import_alias' => true,
             'no_useless_else' => true,
             'php_unit_method_casing' => true,
-            'phpdoc_to_comment' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
