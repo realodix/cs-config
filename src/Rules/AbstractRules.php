@@ -6,7 +6,7 @@ use Realodix\CsConfig\Helper\ClassHelper;
 
 abstract class AbstractRules implements RulesInterface
 {
-    protected $localRules = [];
+    private $localRules = [];
 
     abstract protected function rules(): array;
 
