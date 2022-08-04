@@ -2,7 +2,7 @@
 
 namespace Realodix\CsConfig\Helper;
 
-class ClassHelper
+class Helper
 {
     /**
      * Get the class basename.

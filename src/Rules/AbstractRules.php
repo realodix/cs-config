@@ -2,7 +2,7 @@
 
 namespace Realodix\CsConfig\Rules;
 
-use Realodix\CsConfig\Helper\ClassHelper;
+use Realodix\CsConfig\Helper\Helper;
 
 abstract class AbstractRules implements RulesInterface
 {
@@ -25,7 +25,7 @@ abstract class AbstractRules implements RulesInterface
             return $this->name;
         }
 
-        return ClassHelper::classBasename($this).' CS';
+        return Helper::classBasename($this).' CS';
     }
 
     public function getRules(): array

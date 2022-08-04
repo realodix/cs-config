@@ -3,7 +3,7 @@
 namespace Realodix\CsConfig\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Realodix\CsConfig\Helper\ClassHelper;
+use Realodix\CsConfig\Helper\Helper;
 use Realodix\CsConfig\Rules\AbstractRules;
 
 class AbstractRulesTest extends TestCase
@@ -16,7 +16,7 @@ class AbstractRulesTest extends TestCase
     public function testGetDefaultNameRules(): void
     {
         $actual = $this->nameCleanup((new DefaultName)->getName());
-        $expected = ClassHelper::classBasename(new DefaultName);
+        $expected = Helper::classBasename(new DefaultName);
 
         $this->assertSame($expected, $actual);
     }
