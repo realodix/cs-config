@@ -16,6 +16,6 @@ class RealodixTest extends RulesTestCase
 
     public function getRulesFromConfig(): ConfigInterface
     {
-        return Config::create(new Realodix);
+        return (new Config)->create();
     }
 }
