@@ -63,7 +63,8 @@ use Realodix\CsConfig\Finder;
 use Realodix\CsConfig\Rules\Realodix;
 
 $finder = Finder::base(__DIR__);
-$addOrOverrideRules = [
+// You can add or override preset rules
+$localRules = [
     // Adding a rule
     'array_syntax' => true,
     // Adding a rule or override predefined rules
@@ -77,7 +78,7 @@ $addOrOverrideRules = [
     'CustomFixer/rule_2' => true,
 ];
 
-return Config::create(new Realodix($addOrOverrideRules))
+return Config::create(new Realodix($localRules))
     ->registerCustomFixers(new PhpCsFixerCustomFixers\CustomFixer())
     ->setFinder($finder);
 ```

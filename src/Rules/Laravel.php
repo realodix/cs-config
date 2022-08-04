@@ -5,8 +5,6 @@ namespace Realodix\CsConfig\Rules;
 final class Laravel extends AbstractRules
 {
     /**
-     * Ruleset used by Laravel Pint
-     *
      * Latest commit c598b68 on Jul 14, 2022
      * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
      */
