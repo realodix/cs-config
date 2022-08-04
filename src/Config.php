@@ -3,18 +3,12 @@
 namespace Realodix\CsConfig;
 
 use PhpCsFixer\ConfigInterface;
+use Realodix\CsConfig\Rules\RulesInterface;
 
 class Config
 {
-    public function __construct(string $name = 'realodix')
+    public static function create(RulesInterface $rules): ConfigInterface
     {
-        $this->name = $name;
-    }
-
-    public function create(array $localRules = []): ConfigInterface
-    {
-        $rules = $this->ruleSets((new self)->name, $localRules);
-
         return (new \PhpCsFixer\Config($rules->getName()))
             ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
             ->registerCustomFixers([
@@ -24,23 +18,5 @@ class Config
             ])
             ->setRiskyAllowed(true)
             ->setRules($rules->getRules());
-    }
-
-    private function ruleSets(string $name, array $localRules): object
-    {
-        switch ($name) {
-            case 'realodix':
-                return new \Realodix\CsConfig\Rules\Realodix($localRules);
-            case 'realodix_plus':
-                return new \Realodix\CsConfig\Rules\RealodixPlus($localRules);
-            case 'laravel':
-                return new \Realodix\CsConfig\Rules\Laravel($localRules);
-            case 'laravel_risky':
-                return new \Realodix\CsConfig\Rules\LaravelRisky($localRules);
-            case 'spatie':
-                return new \Realodix\CsConfig\Rules\Spatie($localRules);
-            default:
-                return new \Realodix\CsConfig\Rules\Realodix($localRules);
-        }
     }
 }

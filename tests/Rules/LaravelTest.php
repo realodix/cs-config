@@ -16,6 +16,6 @@ class LaravelTest extends RulesTestCase
 
     public function getRulesFromConfig(): ConfigInterface
     {
-        return (new Config('laravel'))->create();
+        return Config::create(new Laravel);
     }
 }

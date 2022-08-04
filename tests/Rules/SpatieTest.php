@@ -16,6 +16,6 @@ class SpatieTest extends RulesTestCase
 
     public function getRulesFromConfig(): ConfigInterface
     {
-        return (new Config('spatie'))->create();
+        return Config::create(new Spatie);
     }
 }

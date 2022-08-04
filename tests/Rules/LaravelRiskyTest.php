@@ -16,6 +16,6 @@ class LaravelRiskyTest extends RulesTestCase
 
     protected function rulesFromConfig(): ConfigInterface
     {
-        return (new Config('laravel_risky'))->create();
+        return Config::create(new LaravelRisky);
     }
 }
