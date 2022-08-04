@@ -2,19 +2,19 @@
 
 namespace Realodix\CsConfig\Rules;
 
-use Realodix\CsConfig\Helper\ClassHelper;
+use Realodix\CsConfig\Helper\Helper;
 
 abstract class AbstractRules implements RulesInterface
 {
-    protected array $additional = [];
+    private array $localRules = [];
 
     protected string $name = '';
 
     abstract protected function rules(): array;
 
-    public function __construct(array $additional = [])
+    public function __construct(array $localRules = [])
     {
-        $this->additional = $additional;
+        $this->localRules = $localRules;
     }
 
     public function getName(): string
@@ -23,11 +23,11 @@ abstract class AbstractRules implements RulesInterface
             return $this->name;
         }
 
-        return ClassHelper::classBasename($this).' CS';
+        return Helper::classBasename($this).' CS';
     }
 
     public function getRules(): array
     {
-        return array_merge($this->rules(), $this->additional);
+        return array_merge($this->rules(), $this->localRules);
     }
 }
