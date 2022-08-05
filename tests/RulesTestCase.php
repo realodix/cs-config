@@ -76,7 +76,7 @@ abstract class RulesTestCase extends TestCase
     {
         $reflect = new \ReflectionClass($this->getRulesClass());
         $this->assertCount(1, $reflect->getMethods(\ReflectionMethod::IS_PROTECTED));
-        $this->assertCount(3, $reflect->getMethods(\ReflectionMethod::IS_PUBLIC));
+        $this->assertCount(2, $reflect->getMethods(\ReflectionMethod::IS_PUBLIC));
     }
 
     /**
@@ -109,18 +109,18 @@ abstract class RulesTestCase extends TestCase
      *
      * @test
      */
-    public function itMergesAdditionalRules(): void
-    {
-        $baseRules = $this->getRulesClass()->getRules();
+    // public function itMergesAdditionalRules(): void
+    // {
+    //     $baseRules = $this->getRulesClass()->getRules();
 
-        $rules = $this->getRulesClass(['foo' => 'bar'])
-                    ->getRules();
+    //     $rules = $this->getRulesClass(['foo' => 'bar'])
+    //                 ->getRules();
 
-        $this->assertIsArray($rules);
-        $this->assertCount(count($baseRules) + 1, $rules);
-        $this->assertArrayHasKey('foo', $rules);
-        $this->assertSame('bar', $rules['foo']);
-    }
+    //     $this->assertIsArray($rules);
+    //     $this->assertCount(count($baseRules) + 1, $rules);
+    //     $this->assertArrayHasKey('foo', $rules);
+    //     $this->assertSame('bar', $rules['foo']);
+    // }
 
     /** @test */
     public function itValidPhpCsFIxerRules(): void

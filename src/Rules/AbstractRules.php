@@ -6,16 +6,9 @@ use Realodix\CsConfig\Helper\Helper;
 
 abstract class AbstractRules implements RulesInterface
 {
-    private array $localRules = [];
-
     protected string $name = '';
 
     abstract protected function rules(): array;
-
-    public function __construct(array $localRules = [])
-    {
-        $this->localRules = $localRules;
-    }
 
     public function getName(): string
     {
@@ -28,6 +21,6 @@ abstract class AbstractRules implements RulesInterface
 
     public function getRules(): array
     {
-        return array_merge($this->rules(), $this->localRules);
+        return array_merge($this->rules());
     }
 }
