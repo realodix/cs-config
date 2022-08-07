@@ -17,6 +17,7 @@ class Config
                 new Fixers\Laravel\LaravelPhpdocSeparationFixer,
             ])
             ->setRiskyAllowed(true)
-            ->setRules($rules->getRules());
+            ->setRules($rules->getRules())
+            ->setFinder(Finder::base());
     }
 }
