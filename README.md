@@ -25,14 +25,11 @@ use Realodix\CsConfig\Config;
 use Realodix\CsConfig\Finder;
 use Realodix\CsConfig\Rules\Realodix;
 
-$finder = Finder::base(__DIR__);
-
-return Config::create(new Realodix)
-    ->setFinder($finder);
+return Config::create(new Realodix);
 ```
 
 #### Finder Presets
-- [`Finder::base()`](docs/finders.md#finderbase)
+- [`Finder::base()`](docs/finders.md#finderbase) - Default
 - [`Finder::laravel()`](docs/finders.md#finderlaravel)
 
 #### Rulesets
@@ -62,8 +59,6 @@ use Realodix\CsConfig\Config;
 use Realodix\CsConfig\Finder;
 use Realodix\CsConfig\Rules\Realodix;
 
-$finder = Finder::base(__DIR__);
-// You can add or override preset rules
 $localRules = [
     // Adding a rule
     'array_syntax' => true,
@@ -79,8 +74,7 @@ $localRules = [
 ];
 
 return Config::create(new Realodix($localRules))
-    ->registerCustomFixers(new PhpCsFixerCustomFixers\CustomFixer())
-    ->setFinder($finder);
+    ->registerCustomFixers(new PhpCsFixerCustomFixers\CustomFixer());
 ```
 
 ## Extending
