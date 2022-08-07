@@ -6,14 +6,17 @@ use PhpCsFixer\Finder as PhpCsFixerFinder;
 
 class Finder
 {
-    public static function base(string $baseDir = null): PhpCsFixerFinder
+    /**
+     * @param string|array $dir
+     */
+    public static function base($dir = null): PhpCsFixerFinder
     {
-        if (is_null($baseDir)) {
-            $baseDir = getcwd();
+        if (is_null($dir)) {
+            $dir = getcwd();
         }
 
         return PhpCsFixerFinder::create()
-            ->in($baseDir)
+            ->in($dir)
             ->ignoreVCS(true)
             ->ignoreDotFiles(true)
             ->notName([
@@ -24,9 +27,12 @@ class Finder
             ]);
     }
 
-    public static function laravel(string $baseDir = null): PhpCsFixerFinder
+    /**
+     * @param string|array $dir
+     */
+    public static function laravel($dir = null): PhpCsFixerFinder
     {
-        return self::base($baseDir)
+        return self::base($dir)
             ->exclude([
                 'bootstrap/cache',
                 'public',
