@@ -6,8 +6,12 @@ use PhpCsFixer\Finder as PhpCsFixerFinder;
 
 class Finder
 {
-    public static function base(string $baseDir): PhpCsFixerFinder
+    public static function base(string $baseDir = null): PhpCsFixerFinder
     {
+        if (is_null($baseDir)) {
+            $baseDir = getcwd();
+        }
+
         return PhpCsFixerFinder::create()
             ->in($baseDir)
             ->ignoreVCS(true)
@@ -20,7 +24,7 @@ class Finder
             ]);
     }
 
-    public static function laravel(string $baseDir): PhpCsFixerFinder
+    public static function laravel(string $baseDir = null): PhpCsFixerFinder
     {
         return self::base($baseDir)
             ->exclude([
