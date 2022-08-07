@@ -3,7 +3,7 @@
 ![PHPVersion](https://img.shields.io/badge/PHP-7.1%20|%208-777BB4.svg?style=flat-square)
 ![Build Status](../../actions/workflows/ci.yml/badge.svg)
 
-This package allows sharing identical [`php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer) formatting rules across all of your projects without copy-and-pasting configuration files.
+This package is built on top of [`PHP CS Fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer) and makes it simple to to sharing identical PHP CS Fixer rules across all of your projects without copy-and-pasting configuration files.
 
 
 ## Installation
@@ -32,8 +32,8 @@ return Config::create(new Realodix)
 ```
 
 #### Finder Presets
-- [`Finder::base`](docs/finders.md#finderbase)
-- [`Finder::laravel`](docs/finders.md#finderlaravel)
+- [`Finder::base()`](docs/finders.md#finderbase)
+- [`Finder::laravel()`](docs/finders.md#finderlaravel)
 
 #### Rulesets
 - [`Realodix`](src/Rules/Realodix.php), [`RealodixPlus`](src/Rules/RealodixPlus.php)
@@ -53,7 +53,7 @@ return Config::create(new Realodix)
 
 ## Advanced Configuration
 
-In case you only need some tweaks for specific projects, which won't deserve an own preset - You can add additional rules or override pre-defined ones by passing them as the #1 parameter to the rule set method. These rules will be merged with the pre-defined rules.
+In case you only need some tweaks for specific projects, which won't deserve an own preset - you can add additional rules or override them.
 
 ```php
 <?php
