@@ -11,9 +11,14 @@ final class Laravel extends AbstractRules
     protected function rules(): array
     {
         return [
+            // risky
+            'self_accessor' => false,
+            'psr_autoloading' => false,
+            'no_alias_functions' => true,
+            'no_unreachable_default_argument_value' => true,
+
             'phpdoc_summary' => false,
             'phpdoc_to_comment' => false,
-            'psr_autoloading' => false,
             'simplified_null_return' => false,
             'statement_indentation' => false,
 

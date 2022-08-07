@@ -104,24 +104,6 @@ abstract class RulesTestCase extends TestCase
         $this->assertNotEmpty($rules->getRules());
     }
 
-    /**
-     * It merges additional rules
-     *
-     * @test
-     */
-    // public function itMergesAdditionalRules(): void
-    // {
-    //     $baseRules = $this->getRulesClass()->getRules();
-
-    //     $rules = $this->getRulesClass(['foo' => 'bar'])
-    //                 ->getRules();
-
-    //     $this->assertIsArray($rules);
-    //     $this->assertCount(count($baseRules) + 1, $rules);
-    //     $this->assertArrayHasKey('foo', $rules);
-    //     $this->assertSame('bar', $rules['foo']);
-    // }
-
     /** @test */
     public function itValidPhpCsFIxerRules(): void
     {
@@ -132,20 +114,4 @@ abstract class RulesTestCase extends TestCase
 
         $this->assertIsArray($factory->getFixers());
     }
-
-    /* @test */
-    // public function itValidPhpCsFIxerRulesName(): void
-    // {
-    //     $fixerFactory = new FixerFactory;
-    //     $fixerFactory->registerBuiltInFixers();
-
-    //     $configuredFixers = array_keys($this->getCleanedRules());
-    //     $availableFixers = array_map(static function (FixerInterface $fixer): string {
-    //         return $fixer->getName();
-    //     }, $fixerFactory->getFixers());
-
-    //     $unknownFixers = array_diff($configuredFixers, $availableFixers);
-
-    //     $this->assertSame(0, count($unknownFixers));
-    // }
 }

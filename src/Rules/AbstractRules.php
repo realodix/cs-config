@@ -21,6 +21,6 @@ abstract class AbstractRules implements RulesInterface
 
     public function getRules(): array
     {
-        return array_merge($this->rules());
+        return $this->rules();
     }
 }

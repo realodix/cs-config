@@ -8,19 +8,26 @@ use Realodix\CsConfig\Rules\RulesInterface;
 class Config
 {
     /**
-     * @param string|RulesInterface $name
+     * @param string|RulesInterface $ruleSet
      *
      * @throws \InvalidArgumentException
      */
-    public static function create($name, array $localRules = []): ConfigInterface
+    public static function create($ruleSet, array $localRules = []): ConfigInterface
     {
-        if (! $name instanceof RulesInterface && ! is_string($name)) {
-            throw new \InvalidArgumentException('$name must be of type string or instanceof Realodix\CsConfig\Rules\RulesInterface');
+        if (! is_string($ruleSet) && ! $ruleSet instanceof RulesInterface) {
+            throw new \InvalidArgumentException(sprintf(
+                '%s(): Argument #1 ($ruleSet) must be of type %s, %s given',
+                __METHOD__,
+                'string|RulesInterface',
+                gettype($ruleSet)
+            ));
         }
 
-        $rules = is_string($name) ? self::ruleSets($name) : $name;
+        if (is_string($ruleSet)) {
+            $ruleSet = self::ruleSet($ruleSet);
+        }
 
-        return (new \PhpCsFixer\Config($rules->getName()))
+        return (new \PhpCsFixer\Config($ruleSet->getName()))
             ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
             ->registerCustomFixers([
                 new Fixers\Laravel\LaravelPhpdocAlignmentFixer,
@@ -28,26 +35,26 @@ class Config
                 new Fixers\Laravel\LaravelPhpdocSeparationFixer,
             ])
             ->setRiskyAllowed(true)
-            ->setRules(array_merge($rules->getRules(), $localRules));
+            ->setRules(array_merge($ruleSet->getRules(), $localRules))
+            ->setFinder(Finder::base());
     }
 
-    private static function ruleSets(string $name): object
+    /**
+     * @throws \Exception
+     */
+    private static function ruleSet(string $name): object
     {
         switch ($name) {
             case 'blank':
                 return new \Realodix\CsConfig\Rules\Blank;
             case 'realodix':
                 return new \Realodix\CsConfig\Rules\Realodix;
-            case 'realodix_plus':
-                return new \Realodix\CsConfig\Rules\RealodixPlus;
             case 'laravel':
                 return new \Realodix\CsConfig\Rules\Laravel;
-            case 'laravel_risky':
-                return new \Realodix\CsConfig\Rules\LaravelRisky;
             case 'spatie':
                 return new \Realodix\CsConfig\Rules\Spatie;
             default:
-                return new \Realodix\CsConfig\Rules\Realodix;
+                throw new \Exception('Unknown rule set.');
         }
     }
 }
