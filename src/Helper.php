@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\CsConfig\Helper;
+namespace Realodix\CsConfig;
 
 class Helper
 {

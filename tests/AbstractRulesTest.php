@@ -3,7 +3,7 @@
 namespace Realodix\CsConfig\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Realodix\CsConfig\Helper\Helper;
+use Realodix\CsConfig\Helper;
 use Realodix\CsConfig\Rules\AbstractRules;
 
 class AbstractRulesTest extends TestCase

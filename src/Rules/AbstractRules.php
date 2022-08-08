@@ -2,7 +2,7 @@
 
 namespace Realodix\CsConfig\Rules;
 
-use Realodix\CsConfig\Helper\Helper;
+use Realodix\CsConfig\Helper;
 
 abstract class AbstractRules implements RulesInterface
 {
