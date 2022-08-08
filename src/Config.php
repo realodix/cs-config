@@ -7,9 +7,9 @@ use Realodix\CsConfig\Rules\RulesInterface;
 
 class Config
 {
-    public static function create(RulesInterface $rules): ConfigInterface
+    public static function create(RulesInterface $ruleSet): ConfigInterface
     {
-        return (new \PhpCsFixer\Config($rules->getName()))
+        return (new \PhpCsFixer\Config($ruleSet->getName()))
             ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
             ->registerCustomFixers([
                 new Fixers\Laravel\LaravelPhpdocAlignmentFixer,
@@ -17,7 +17,7 @@ class Config
                 new Fixers\Laravel\LaravelPhpdocSeparationFixer,
             ])
             ->setRiskyAllowed(true)
-            ->setRules($rules->getRules())
+            ->setRules($ruleSet->getRules())
             ->setFinder(Finder::base());
     }
 }
