@@ -1,4 +1,5 @@
 {
+    "abandoned": "realodix/relax",
     "name": "realodix/cs-config",
     "description": "Shared php-cs-fixer rules & finders preset",
     "license": "MIT",

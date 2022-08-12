@@ -1,3 +1,7 @@
+# :exclamation: Abandoned!
+
+This package is abandoned, you should avoid using it. Use [`realodix/relax`](https://github.com/realodix/relax) instead.
+
 # Realodix CS Config
 
 ![PHPVersion](https://img.shields.io/badge/PHP-7.4%20|%208-777BB4.svg?style=flat-square)
